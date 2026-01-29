@@ -3,18 +3,19 @@ import { useMouseTilt } from "../hooks/useMouseTilt";
 
 const PROJECTS_PER_PAGE = 6;
 
+/* Replace Live/Demo/Portal hrefs with your deployed URLs.
+ * Images are local SVGs in public/images/projects/ — always load. */
 const PROJECTS = [
   {
     tag: "Backend · API",
     title: "High-Throughput Service",
     desc: "Scalable API and event pipeline. Tech: Node/Go, Kafka, PostgreSQL.",
     links: [
-      { label: "Live", href: "#" },
+      { label: "Live", href: "https://jsonplaceholder.typicode.com" },
       { label: "Code", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80",
-    imageAlt: "Code editor",
+    image: "/images/projects/high-throughput.svg",
+    imageAlt: "API and event pipeline code",
   },
   {
     tag: "Systems",
@@ -24,9 +25,8 @@ const PROJECTS = [
       { label: "Docs", href: "#" },
       { label: "Code", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80",
-    imageAlt: "Server infrastructure",
+    image: "/images/projects/distributed-worker.svg",
+    imageAlt: "Server and queue infrastructure",
   },
   {
     tag: "Full-Stack",
@@ -36,9 +36,8 @@ const PROJECTS = [
       { label: "Demo", href: "#" },
       { label: "Code", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
-    imageAlt: "Dashboard UI",
+    image: "/images/projects/internal-tooling.svg",
+    imageAlt: "Admin dashboard and reporting",
   },
   {
     tag: "Software Engineering",
@@ -48,9 +47,8 @@ const PROJECTS = [
       { label: "Docs", href: "#" },
       { label: "Repo", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=80",
-    imageAlt: "Laptop development",
+    image: "/images/projects/platform-sdk-cli.svg",
+    imageAlt: "Developer tools and CLI",
   },
   {
     tag: "API · Event-Driven",
@@ -60,9 +58,8 @@ const PROJECTS = [
       { label: "Live", href: "#" },
       { label: "Code", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
-    imageAlt: "Analytics dashboard",
+    image: "/images/projects/realtime-notification.svg",
+    imageAlt: "Real-time analytics and live alerts",
   },
   {
     tag: "DevOps · Cloud",
@@ -72,9 +69,8 @@ const PROJECTS = [
       { label: "Docs", href: "#" },
       { label: "Repo", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80",
-    imageAlt: "Cloud infrastructure",
+    image: "/images/projects/cicd-iac.svg",
+    imageAlt: "Cloud and deployment infrastructure",
   },
   {
     tag: "Full-Stack",
@@ -84,9 +80,8 @@ const PROJECTS = [
       { label: "Demo", href: "#" },
       { label: "Code", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80",
-    imageAlt: "Team collaboration",
+    image: "/images/projects/customer-portal.svg",
+    imageAlt: "B2B customer portal",
   },
   {
     tag: "Data · ML",
@@ -96,9 +91,8 @@ const PROJECTS = [
       { label: "Docs", href: "#" },
       { label: "Repo", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80",
-    imageAlt: "Data pipeline",
+    image: "/images/projects/recommendation-engine.svg",
+    imageAlt: "Data and recommendation pipeline",
   },
   {
     tag: "Backend",
@@ -108,9 +102,8 @@ const PROJECTS = [
       { label: "Docs", href: "#" },
       { label: "Code", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80",
-    imageAlt: "Payment flow",
+    image: "/images/projects/payment-gateway.svg",
+    imageAlt: "Payment and transaction flow",
   },
   {
     tag: "Full-Stack",
@@ -120,9 +113,8 @@ const PROJECTS = [
       { label: "Demo", href: "#" },
       { label: "Repo", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d31cc5b5?w=600&q=80",
-    imageAlt: "Design system",
+    image: "/images/projects/design-system.svg",
+    imageAlt: "Design system and components",
   },
   {
     tag: "Systems",
@@ -132,9 +124,8 @@ const PROJECTS = [
       { label: "Docs", href: "#" },
       { label: "Repo", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
-    imageAlt: "Observability",
+    image: "/images/projects/observability.svg",
+    imageAlt: "Monitoring and observability dashboards",
   },
   {
     tag: "API",
@@ -144,9 +135,8 @@ const PROJECTS = [
       { label: "Portal", href: "#" },
       { label: "Docs", href: "#" },
     ],
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&q=80",
-    imageAlt: "API docs",
+    image: "/images/projects/public-api-portal.svg",
+    imageAlt: "API documentation and developer portal",
   },
 ];
 
@@ -174,13 +164,6 @@ function ProjectCard({ project }) {
         <span className="project-card__tag">{project.tag}</span>
         <h3 className="project-card__title">{project.title}</h3>
         <p className="project-card__desc">{project.desc}</p>
-        <div className="project-card__links">
-          {project.links.map((link) => (
-            <a key={link.label} href={link.href} className="project-card__link">
-              {link.label}
-            </a>
-          ))}
-        </div>
       </div>
     </article>
   );

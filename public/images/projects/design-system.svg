@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="bg10" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1220"/>
+      <stop offset="100%" stop-color="#111a28"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg10)"/>
+  <rect x="100" y="100" width="80" height="60" rx="6" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.06)" opacity="0.6"/>
+  <rect x="200" y="100" width="80" height="60" rx="6" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.06)" opacity="0.6"/>
+  <rect x="300" y="100" width="80" height="60" rx="6" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.06)" opacity="0.6"/>
+  <rect x="400" y="100" width="80" height="60" rx="6" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.06)" opacity="0.6"/>
+  <rect x="160" y="200" width="160" height="80" rx="8" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.5"/>
+  <rect x="280" y="200" width="160" height="80" rx="8" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.5"/>
+  <text x="300" y="340" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Component library � Storybook � Docs</text>
+</svg>

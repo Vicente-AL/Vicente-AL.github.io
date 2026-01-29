@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1220"/>
+      <stop offset="100%" stop-color="#111a28"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg6)"/>
+  <ellipse cx="300" cy="140" rx="120" ry="50" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M200 160 L250 220 M400 160 L350 220 M300 190 L300 280" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+  <rect x="220" y="280" width="160" height="50" rx="8" stroke="#00d4ff" stroke-width="1.5" fill="rgba(0,212,255,0.06)" opacity="0.6"/>
+  <text x="300" y="312" font-family="system-ui,sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Deploy</text>
+  <text x="300" y="360" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">CI/CD � Terraform � IaC</text>
+</svg>

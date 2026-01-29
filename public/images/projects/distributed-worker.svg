@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1220"/>
+      <stop offset="100%" stop-color="#111a28"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg2)"/>
+  <rect x="80" y="120" width="100" height="80" rx="8" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.5"/>
+  <rect x="250" y="120" width="100" height="80" rx="8" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.5"/>
+  <rect x="420" y="120" width="100" height="80" rx="8" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M180 160h70M330 160h90M180 200h150M250 200v80M350 200v80" stroke="#00d4ff" stroke-width="1.5" opacity="0.4"/>
+  <circle cx="300" cy="320" r="40" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.4"/>
+  <text x="300" y="325" font-family="system-ui,sans-serif" font-size="12" fill="#00d4ff" text-anchor="middle">Queue</text>
+  <text x="300" y="360" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Workers � Retries � Monitoring</text>
+</svg>

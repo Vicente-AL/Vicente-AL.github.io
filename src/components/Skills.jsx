@@ -91,42 +91,42 @@ const ICONS = {
 const SKILLS = [
   {
     title: "Frontend & UI",
-    list: "React · Next.js · Vue · TypeScript · JavaScript · HTML5 · CSS3 · Tailwind · Redux · Zustand",
+    list: "React · Next.js · Vue · Svelte · TypeScript · JavaScript · HTML5 · CSS3 · Tailwind · Sass · Redux · Zustand · React Query · Storybook · Vite · Webpack · Responsive · A11y",
     icon: ICONS.frontend,
   },
   {
     title: "Backend",
-    list: "Node.js · Python · Go · Java · C# · .NET Core · REST · GraphQL · gRPC · WebSockets",
+    list: "Node.js · Python · Go · Java · C# · .NET Core · FastAPI · Express · Nest · REST · GraphQL · gRPC · WebSockets · Auth · Stripe · Webhooks · Message queues",
     icon: ICONS.backend,
   },
   {
     title: "Full-Stack & APIs",
-    list: "Full-stack apps · API design · BFF · Serverless · Edge · Monorepos · Nx · Turborepo",
+    list: "Full-stack apps · API design · BFF · Serverless · Edge · Monorepos · Nx · Turborepo · tRPC · OpenAPI · Swagger · API gateways · Rate limiting",
     icon: ICONS.fullstack,
   },
   {
     title: "Languages & Core",
-    list: "JavaScript/TS · Python · Go · Java · C# · SQL · Bash · OOP · DDD · Clean Code · Design Patterns",
+    list: "JavaScript/TS · Python · Go · Java · C# · SQL · Bash · OOP · DDD · Clean Code · Design Patterns · SOLID · Data structures · Algorithms",
     icon: ICONS.languages,
   },
   {
     title: "Data & Systems",
-    list: "PostgreSQL · MongoDB · Redis · Kafka · RabbitMQ · Elasticsearch · Caching · Microservices",
+    list: "PostgreSQL · MongoDB · Redis · Kafka · RabbitMQ · Elasticsearch · Caching · Microservices · Event sourcing · CDC · Vector DBs · Time-series",
     icon: ICONS.data,
   },
   {
     title: "Architecture & Cloud",
-    list: "AWS · GCP · Azure · Docker · Kubernetes · Event-Driven · Domain-Driven Design · System Design",
+    list: "AWS · GCP · Azure · Docker · Kubernetes · Event-Driven · DDD · System Design · High availability · Scalability · IaC · Serverless",
     icon: ICONS.cloud,
   },
   {
     title: "DevOps & Tools",
-    list: "Git · GitHub Actions · Jenkins · Terraform · Linux · Nginx · Observability · Logging · Monitoring",
+    list: "Git · GitHub Actions · Jenkins · Terraform · Linux · Nginx · Observability · Logging · Monitoring · Prometheus · Grafana · Datadog · Debugging",
     icon: ICONS.devops,
   },
   {
     title: "Software Engineering",
-    list: "TDD · CI/CD · Code Review · Agile · Scrum · Documentation · Mentoring · Technical Leadership",
+    list: "TDD · CI/CD · Code Review · Agile · Scrum · Documentation · Mentoring · Technical Leadership · RFCs · Incident response · On-call",
     icon: ICONS.practices,
   },
 ];
@@ -143,7 +143,12 @@ function SkillCard({ skill }) {
       onMouseLeave={tilt.onMouseLeave}>
       <div className="skill-card__icon">{skill.icon}</div>
       <h3 className="skill-card__title">{skill.title}</h3>
-      <p className="skill-card__list">{skill.list}</p>
+      <p className="skill-card__list">
+        {skill.list}
+        <span className="skill-card__ellipsis" aria-hidden="true">
+          ⋯
+        </span>
+      </p>
     </div>
   );
 }

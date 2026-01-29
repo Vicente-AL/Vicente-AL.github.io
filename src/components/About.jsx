@@ -1,22 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 
 const PROFILE_PHOTOS = [
-  {
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&q=80",
-    alt: "Profile — professional",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=400&fit=crop&q=80",
-    alt: "Coding & development",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=400&fit=crop&q=80",
-    alt: "Workspace & focus",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=400&fit=crop&q=80",
-    alt: "Collaboration & team",
-  },
+  { src: "/images/about/profile-1.png", alt: "Profile — professional" },
+  { src: "/images/about/profile-2.png", alt: "Profile" },
 ];
 
 const ROTATE_INTERVAL_MS = 4000;
@@ -79,28 +65,38 @@ function About() {
         <div className="about__grid">
           <div className="about__content">
             <p className="about__lead">
-              I'm a <strong>Senior Software Developer</strong> with a focus on
-              building reliable, performant systems that scale. I thrive in
-              complex domains — distributed systems, APIs, and clean
-              architecture.
+              I'm a <strong>Senior Software Developer</strong> with{" "}
+              <strong>more than 9 years</strong> of experience building
+              reliable, performant systems that scale. I thrive in complex
+              domains — distributed systems, APIs, event-driven architecture,
+              and cloud-native services.
             </p>
             <p className="about__text">
-              With years of experience across the stack, I turn business
-              requirements into maintainable code and robust technical
-              solutions. I care about documentation, testing, and team
-              collaboration as much as shipping features.
+              I turn business requirements into maintainable code, robust APIs,
+              and well-documented technical solutions. I value documentation,
+              testing, code reviews, and cross-team collaboration as much as
+              shipping features — and I've seen how that mindset pays off over
+              the long run.
             </p>
             <div className="about__meta">
               <div className="about__meta-item">
                 <span className="about__meta-label">Focus</span>
                 <span className="about__meta-value">
-                  Backend · Systems · Architecture
+                  Full-stack and backend development: REST and event-driven
+                  APIs, SQL/NoSQL data stores, message queues (e.g. Kafka), and
+                  cloud-native architecture. I design for scale, observability,
+                  and long-term maintainability, and I'm comfortable leading
+                  technical decisions and mentoring engineers.
                 </span>
               </div>
               <div className="about__meta-item">
                 <span className="about__meta-label">Mindset</span>
                 <span className="about__meta-value">
-                  Quality · Scalability · Clarity
+                  Quality-first engineering, clear documentation, and inclusive
+                  collaboration. I prioritize scalability, automated testing,
+                  and iterative delivery so we ship reliable software without
+                  cutting corners — and leave systems easier to evolve for
+                  whoever comes next.
                 </span>
               </div>
             </div>

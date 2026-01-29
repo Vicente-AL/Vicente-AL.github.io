@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1220"/>
+      <stop offset="100%" stop-color="#111a28"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg4)"/>
+  <rect x="80" y="100" width="440" height="180" rx="8" stroke="#00d4ff" stroke-width="2" fill="none" opacity="0.5"/>
+  <text x="100" y="140" font-family="monospace" font-size="14" fill="#00d4ff" opacity="0.9">&gt; sdk init</text>
+  <text x="100" y="170" font-family="monospace" font-size="14" fill="#00d4ff" opacity="0.7">  Config loaded.</text>
+  <text x="100" y="200" font-family="monospace" font-size="14" fill="#00d4ff" opacity="0.7">  Building...</text>
+  <text x="100" y="230" font-family="monospace" font-size="14" fill="#34a853" opacity="0.8">  Done.</text>
+  <text x="100" y="260" font-family="monospace" font-size="14" fill="#94a3b8" opacity="0.5">&gt; _</text>
+  <text x="300" y="360" font-family="system-ui,sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">SDK � CLI � Docs</text>
+</svg>

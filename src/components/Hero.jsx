@@ -110,6 +110,7 @@ function Hero() {
             <span className="hero__badge-dot" />
             Senior Software Developer
           </div>
+          <p className="hero__name">Vicente Emmanuel Ayala Lozano</p>
           <h1 className="hero__title">
             <span className="hero__title-line">Building</span>
             <span className="hero__title-line hero__title-line--accent">
