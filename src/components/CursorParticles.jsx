@@ -6,9 +6,9 @@ const COLORS = [
   "rgba(156, 229, 244, ", // soft cyan
   "rgba(99, 102, 241, ", // purple
 ];
-const PARTICLE_COUNT = 10;
-const MAX_PARTICLES = 280;
-const THROTTLE_MS = 45;
+const PARTICLE_COUNT = 12;
+const MAX_PARTICLES = 320;
+const THROTTLE_MS = 18;
 const SPREAD_SPEED_MIN = 1.2;
 const SPREAD_SPEED_MAX = 3.5;
 const PARTICLE_LIFE = 50;

@@ -1,18 +1,4 @@
 import { useState, useEffect } from "react";
-import { MouseProvider } from "./contexts/MouseContext";
-import BackgroundEffects from "./components/BackgroundEffects";
-import MouseSpotlight from "./components/MouseSpotlight";
-import CursorParticles from "./components/CursorParticles";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Skills from "./components/Skills";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Mission from "./components/Mission";
-import Testimonials from "./components/Testimonials";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
 
 function CustomCursor() {
   const [pos, setPos] = useState({ x: 0, y: 0 });
@@ -29,7 +15,7 @@ function CustomCursor() {
     if (!useCustomCursor) return;
     function move(e) {
       setPos({ x: e.clientX, y: e.clientY });
-      setVisible(true);
+      if (!visible) setVisible(true);
     }
     function leave() {
       setVisible(false);
@@ -45,7 +31,7 @@ function CustomCursor() {
       document.body.removeEventListener("mouseleave", leave);
       document.body.removeEventListener("mouseenter", enter);
     };
-  }, [useCustomCursor]);
+  }, [visible, useCustomCursor]);
 
   if (!useCustomCursor || !visible) return null;
 
@@ -68,7 +54,13 @@ function CustomCursor() {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <linearGradient id="cursorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <linearGradient
+            id="cursorGrad"
+            x1="0%"
+            y1="0%"
+            x2="100%"
+            y2="100%"
+          >
             <stop offset="0%" stopColor="#00d4ff" />
             <stop offset="100%" stopColor="#6366f1" />
           </linearGradient>
@@ -86,32 +78,4 @@ function CustomCursor() {
   );
 }
 
-function App() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  return (
-    <MouseProvider>
-      <BackgroundEffects />
-      <MouseSpotlight />
-      <CursorParticles />
-      <CustomCursor />
-      <Header
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-      />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Mission />
-        <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-    </MouseProvider>
-  );
-}
-
-export default App;
+export default CustomCursor;

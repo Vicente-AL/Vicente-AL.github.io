@@ -1,8 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 
 const PROFILE_PHOTOS = [
-  { src: "/images/about/profile-1.png", alt: "Profile — professional" },
-  { src: "/images/about/profile-2.png", alt: "Profile" },
+  { src: "/images/about/profile-1.png", alt: "Profile — presenting" },
+  { src: "/images/about/profile-2.png", alt: "Profile — collaboration" },
+  { src: "/images/about/profile-3.png", alt: "Profile — developer" },
+  { src: "/images/about/profile-4.png", alt: "Profile — professional" },
 ];
 
 const ROTATE_INTERVAL_MS = 4000;
@@ -133,9 +135,6 @@ function About() {
                 </div>
               </div>
               <div className="about__profile-frame" aria-hidden="true" />
-              <div className="about__profile-hint" aria-hidden="true">
-                Click or wait
-              </div>
               <div className="about__profile-dots">
                 {PROFILE_PHOTOS.map((_, i) => (
                   <button

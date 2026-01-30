@@ -22,6 +22,9 @@
   --font-mono: "JetBrains Mono", monospace;
   --container: min(90vw, 1100px);
   --section-pad: clamp(4rem, 10vw, 7rem);
+  /* Custom cursor: circle with gradient border only (no fill) — same everywhere */
+  --cursor-default: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='cg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300d4ff'/%3E%3Cstop offset='100%25' stop-color='%236366f1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='12' cy='12' r='5' fill='none' stroke='url(%23cg)' stroke-width='2'/%3E%3C/svg%3E") 12 12, auto;
+  --cursor-pointer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cdefs%3E%3ClinearGradient id='cg2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%2300d4ff'/%3E%3Cstop offset='100%25' stop-color='%236366f1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='14' cy='14' r='6' fill='none' stroke='url(%23cg2)' stroke-width='2'/%3E%3C/svg%3E") 14 14, pointer;
 }
 
 *,
@@ -34,6 +37,29 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Hide system cursor on mouse devices; custom cursor element used instead */
+@media (pointer: fine) {
+  html,
+  body,
+  body * {
+    cursor: none !important;
+  }
+}
+
+/* Custom cursor element: gradient circle ring */
+.custom-cursor {
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  width: 28px;
+  height: 28px;
+}
+.custom-cursor__ring {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -64,10 +90,10 @@ body {
   pointer-events: none;
   z-index: 0;
   background-image:
-    linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(0, 212, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.07) 1px, transparent 1px);
   background-size: 60px 60px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 70%);
+  background-position: 0 0;
   animation: grid-pulse 8s ease-in-out infinite;
 }
 
@@ -267,7 +293,7 @@ body {
   gap: 5px;
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: var(--cursor-pointer), pointer;
   padding: 8px;
 }
 .nav__toggle span {
@@ -308,7 +334,7 @@ body {
   will-change: transform;
   transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease,
     opacity 0.2s ease, transform 0.2s ease, font-size 0.2s ease, font-weight 0.2s ease;
-  cursor: default;
+  cursor: var(--cursor-default), auto;
 }
 .hero__float-tag:hover {
   color: #00d4ff;
@@ -517,7 +543,7 @@ body {
   text-decoration: none;
   border-radius: 8px;
   transition: all 0.2s;
-  cursor: pointer;
+  cursor: var(--cursor-pointer), pointer;
   border: 1px solid transparent;
 }
 .btn--primary {
@@ -615,8 +641,8 @@ body {
 .about__profile-wrap {
   position: relative;
   margin-bottom: 1.5rem;
-  cursor: pointer;
-  max-width: 280px;
+  cursor: var(--cursor-pointer), pointer;
+  max-width: 420px;
   outline: none;
 }
 .about__profile-wrap:focus-visible {
@@ -704,7 +730,7 @@ body {
   border-radius: 50%;
   border: 1px solid rgba(0, 212, 255, 0.3);
   background: transparent;
-  cursor: pointer;
+  cursor: var(--cursor-pointer), pointer;
   padding: 0;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
@@ -1002,7 +1028,7 @@ body {
   border: 1px solid var(--border-strong);
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  cursor: pointer;
+  cursor: var(--cursor-pointer), pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 .projects__pagination-btn:hover:not(:disabled) {
@@ -1011,7 +1037,7 @@ body {
 }
 .projects__pagination-btn:disabled {
   opacity: 0.4;
-  cursor: not-allowed;
+  cursor: var(--cursor-default), not-allowed;
 }
 .projects__pagination-dots {
   display: flex;
@@ -1024,7 +1050,7 @@ body {
   border-radius: 50%;
   border: 1px solid rgba(0, 212, 255, 0.4);
   background: transparent;
-  cursor: pointer;
+  cursor: var(--cursor-pointer), pointer;
   padding: 0;
   transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
@@ -1208,7 +1234,7 @@ body {
   background: transparent;
   border: 1px solid var(--border-strong);
   border-radius: 50%;
-  cursor: pointer;
+  cursor: var(--cursor-pointer), pointer;
   transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
   align-self: center;
 }
@@ -1246,7 +1272,7 @@ body {
   border-radius: 50%;
   border: 1px solid rgba(0, 212, 255, 0.4);
   background: transparent;
-  cursor: pointer;
+  cursor: var(--cursor-pointer), pointer;
   padding: 0;
   transition: background 0.2s, border-color 0.2s;
 }
@@ -1510,7 +1536,7 @@ body {
   }
   .about__grid { grid-template-columns: 1fr; }
   .about__visual { order: -1; align-items: center; }
-  .about__profile-wrap { max-width: 220px; margin: 0 auto; }
+  .about__profile-wrap { max-width: 320px; margin: 0 auto; }
   .hero__cta { flex-direction: column; justify-content: center; }
   .btn { width: 100%; justify-content: center; }
   .testimonials__carousel { gap: 0.5rem; }
