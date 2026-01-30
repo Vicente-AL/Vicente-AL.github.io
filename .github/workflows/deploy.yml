@@ -27,6 +27,8 @@ jobs:
         run: npm install
 
       - name: Build project
+        env:
+          BASE_PATH: /Portfolios/
         run: npm run build
 
       - name: Upload Pages artifact

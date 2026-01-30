@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  // Required for GitHub Pages when site is at https://<user>.github.io/<repo>/
-  base: process.env.GITHUB_ACTIONS ? '/Portfolios/' : '/',
+  // BASE_PATH set in GitHub Actions workflow for Pages; local dev uses /
+  base: process.env.BASE_PATH || '/',
 })
