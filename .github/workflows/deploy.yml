@@ -28,7 +28,7 @@ jobs:
 
       - name: Build project
         env:
-          BASE_PATH: /Portfolios/
+          BASE_PATH: relative
         run: npm run build
 
       - name: Upload Pages artifact
